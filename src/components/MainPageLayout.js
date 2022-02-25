@@ -1,4 +1,6 @@
 import React from 'react';
+import Navs from './Navs';
+
 import Title from './Title';
 
 function MainPageLayout({ children }) {
@@ -6,8 +8,9 @@ function MainPageLayout({ children }) {
     <div>
       <Title
         title="Whats on my bar?"
-        subtitle="Choose the ingredients and make a cocktail!"
+        subtitle="Choose the ingredients and lets make a cocktail!"
       />
+      <Navs />
       {children}
     </div>
   );
