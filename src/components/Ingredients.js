@@ -1,10 +1,13 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { useState } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Button } from 'react-bootstrap';
 import {
   IngredientsList,
   IngredientsTitle,
   IngredientsWrapper,
 } from './Ingredients.styled';
+import { apiGet } from '../misc/config';
 
 const ingredientList = [
   '7-Up',
@@ -109,6 +112,10 @@ const ingredientList = [
   'Demerara Sugar',
 ];
 
+const onSearch = () => {
+  console.log('searched');
+};
+
 function Ingredients() {
   const [checked, setChecked] = useState(null);
 
@@ -137,6 +144,11 @@ function Ingredients() {
           );
         })}
       </IngredientsList>
+      <div className="d-grid gap-2">
+        <Button variant="outline-dark" size="lg" onClick={onSearch}>
+          Find cocktails!
+        </Button>
+      </div>
     </IngredientsWrapper>
   );
 }
